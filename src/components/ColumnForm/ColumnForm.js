@@ -6,7 +6,6 @@ import TextInput from '../TextInput/TextInput';
 const ColumnForm = props => {
   const [title, setTitle] = useState(''); 
   const [icon, setIcon] = useState('');
-
   const handleSubmit = e => {
     e.preventDefault();
     props.action({ title: title, icon: icon }); // funkcja addColumn
