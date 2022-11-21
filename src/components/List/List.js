@@ -51,7 +51,6 @@ const List = () => {
     setColumns(columnsUpdated);
   }
 
-  
   return (
     <div className={styles.list}>
       <header className={styles.header}>

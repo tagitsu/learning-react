@@ -2,9 +2,7 @@ import styles from './Column.module.scss';
 import Card from '../Card/Card';
 import CardForm from '../CardForm/CardForm';
 
-const Column = props => {
-
-  return (
+const Column = props => (
     <article className={styles.column}>
       <h3 className={styles.title}>
         <span className={styles.icon + ' fa fa-' + props.icon}></span>
@@ -16,7 +14,5 @@ const Column = props => {
       <CardForm columnId={props.id} action={props.action} />
     </article>
   );
-
-};
 
 export default Column;
