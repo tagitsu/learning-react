@@ -15,7 +15,7 @@ const ColumnForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch({ type: 'ADD_COLUMN', newColumn: { id, title, icon } });
+    dispatch({ type: 'ADD_COLUMN', payload: { id, title, icon } });
     setTitle('');
     setIcon('');
     console.log('funkcja dodająca kolumnę zadziałała');
