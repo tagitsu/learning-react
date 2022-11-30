@@ -2,14 +2,19 @@ import styles from './CardForm.module.scss';
 import { useState } from 'react';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CardForm = props => {
-  
+  console.log('propsy', props);
+  const dispatch = useDispatch();
+
+  const id = useSelector(state => state.cards.length + 1);
   const [title, setTitle] = useState(''); 
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.action({ title: title }, props.columnId); 
+    const columnId = props.columnId;
+    dispatch({ type: 'ADD_CARD', newCard: { id, columnId, title }}); 
     setTitle(''); 
   };
 
