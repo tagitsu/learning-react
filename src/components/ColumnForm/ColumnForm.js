@@ -9,7 +9,6 @@ const ColumnForm = () => {
 
   const [title, setTitle] = useState(''); 
   const [icon, setIcon] = useState('');
-  console.log('title i icon', title, icon);
 
   const id = useSelector(state => state.columns.length + 1);
 
@@ -18,7 +17,6 @@ const ColumnForm = () => {
     dispatch({ type: 'ADD_COLUMN', payload: { id, title, icon } });
     setTitle('');
     setIcon('');
-    console.log('funkcja dodająca kolumnę zadziałała');
  };
  
   return (

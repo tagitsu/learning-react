@@ -5,7 +5,6 @@ import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 
 const CardForm = props => {
-  console.log('propsy', props);
   const dispatch = useDispatch();
 
   const id = useSelector(state => state.cards.length + 1);
