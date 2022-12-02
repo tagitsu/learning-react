@@ -1,6 +1,15 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
 
+export const filteredCards = (state, columnId, search) => {
+  if(search) {
+    return state.cards.filter(card => card.columnId === columnId && card.title.toLowerCase().includes(search.toLowerCase()))
+  } else {
+    return state.cards.filter(card => card.columnId === columnId)
+  }
+};
+
+
 const reducer = (state, action) => {
   switch(action.type) {
     case 'ADD_COLUMN':
