@@ -21,6 +21,9 @@ export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 
 export const addCard = payload => ({ type: 'ADD_CARD', payload});
 
+export const searchCard = payload => ({ type: 'SEARCH_CARD', payload});
+
+
 
 // MAGAZYN
 const reducer = (state, action) => {
