@@ -1,9 +1,10 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
+import strContains from '../utils/strContains';
 
 export const filteredCards = (cards, columnId, search) => {
   if(search) {
-    return cards.filter(card => card.columnId === columnId && card.title.toLowerCase().includes(search.toLowerCase()))
+    return cards.filter(card => card.columnId === columnId && strContains(card.title, search))
   } else {
     return cards.filter(card => card.columnId === columnId)
   }
