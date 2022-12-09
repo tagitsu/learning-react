@@ -7,7 +7,6 @@ import { getAllColumns } from '../../redux/store';
 const List = () => {
 
   const columns = getAllColumns();
-  console.log('columns', columns);
   
   return (
     <div className={styles.list}>

@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import initialState from './initialState';
 import strContains from '../utils/strContains';
 
-// SELECTORS
+// SELEKTORY
 export const filteredCards = (cards, columnId, search) => {
   if(search) {
     return cards.filter(card => card.columnId === columnId && strContains(card.title, search))
@@ -15,9 +15,14 @@ export const getAllColumns = () => {
   return initialState.columns;
 };
 
+// KREATORY AKCJI
+
+export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
+
+export const addCard = payload => ({ type: 'ADD_CARD', payload});
 
 
-// STORE
+// MAGAZYN
 const reducer = (state, action) => {
   switch(action.type) {
     case 'ADD_COLUMN':
