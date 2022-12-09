@@ -2,7 +2,7 @@ import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { searchCard } from '../../redux/store';
 
 const SearchForm = () => {
@@ -15,7 +15,6 @@ const SearchForm = () => {
     dispatch(searchCard({ value }));
     setValue('');
   };
-
 
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
