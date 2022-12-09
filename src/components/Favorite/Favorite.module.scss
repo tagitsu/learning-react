@@ -1,0 +1,15 @@
+@import '../../styles/settings.scss';
+
+.favorite {
+
+  &__title {
+    text-align: center;
+    color: $color-light;
+    font-size: calc($base-size * 2);
+    text-transform: uppercase;
+  }
+
+  &__content {
+    color: $color-light;
+  }
+}
