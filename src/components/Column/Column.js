@@ -8,7 +8,7 @@ const Column = props => {
 
 
   const search = useSelector(state => state.search.value);
-  const cards = useSelector(state => filteredCards(state, props.id, search));
+  const cards = useSelector(state => filteredCards(state.cards, props.id, search));
 
   return(
     <article className={styles.column}>

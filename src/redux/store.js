@@ -1,11 +1,11 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
 
-export const filteredCards = (state, columnId, search) => {
+export const filteredCards = (cards, columnId, search) => {
   if(search) {
-    return state.cards.filter(card => card.columnId === columnId && card.title.toLowerCase().includes(search.toLowerCase()))
+    return cards.filter(card => card.columnId === columnId && card.title.toLowerCase().includes(search.toLowerCase()))
   } else {
-    return state.cards.filter(card => card.columnId === columnId)
+    return cards.filter(card => card.columnId === columnId)
   }
 };
 
