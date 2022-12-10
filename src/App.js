@@ -3,15 +3,20 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
 import Favorite from './components/Favorite/Favorite';
 import About from './components/About/About';
+import { Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
   return (
     <main>
       <NavBar />
       <Container>
-        <Home />
-        <About />
-        <Favorite />
+        <Routes>
+          <Route path="/" element={<Home />} errorElement={<NotFound />} />
+          <Route path="/favorite" element={<Favorite />} errorElement={<NotFound />} />
+          <Route path="/about" element={<About />} errorElement={<NotFound />} />
+          <Route path="" element={<NotFound />} />
+        </Routes>
       </Container>
     </main>
     
