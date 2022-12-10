@@ -1,5 +1,6 @@
 import Container from "../Container/Container";
 import styles from './NavBar.module.scss';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return(
@@ -8,9 +9,9 @@ const NavBar = () => {
         <div className={styles.nav__bar}>
           <i className={styles.icon + ' fa fa-tasks'}></i>
           <ul className={styles.nav__menu}>
-            <li><a href="/">home</a></li>
-            <li><a href="/favorite">favorite</a></li>
-            <li><a href="/about">about</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/favorite">Favorite</Link></li>
+            <li><Link to="/about">About</Link></li>
           </ul>
         </div>
         

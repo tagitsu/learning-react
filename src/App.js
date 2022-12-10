@@ -12,10 +12,10 @@ const App = () => {
       <NavBar />
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} errorElement={<NotFound />} />
-          <Route path="/favorite" element={<Favorite />} errorElement={<NotFound />} />
-          <Route path="/about" element={<About />} errorElement={<NotFound />} />
-          <Route path="" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/favorite" element={<Favorite />}  />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
     </main>

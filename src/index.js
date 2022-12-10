@@ -6,36 +6,16 @@ import App from './App';
 import './styles/normalize.scss';
 import './styles/global.scss';
 import 'font-awesome/css/font-awesome.min.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import NotFound from './components/NotFound/NotFound';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Favorite from './components/Favorite/Favorite';
+import { BrowserRouter } from 'react-router-dom';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <NotFound />
-  },
-  {
-    path: "/favorite",
-    element: <Favorite />,
-    errorElement: <NotFound />
-  },
-  {
-    path: "/about",
-    element: <About />,
-    errorElement: <NotFound />
-  },
-])
+
 ReactDOM.render(
   <React.StrictMode>
-    <RouterProvider router={router}>
       <Provider store={store}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </Provider>
-    </RouterProvider>
   </React.StrictMode>,
   document.querySelector('#root')
 );
