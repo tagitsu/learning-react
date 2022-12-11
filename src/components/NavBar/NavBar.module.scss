@@ -20,10 +20,19 @@
     text-decoration: none;
     color: $color-light;
     font-weight: 700;
-    text-transform: uppercase;
     padding: $base-size;
   }
+
+  &__menu a:hover {
+    color: $color-success;
+  }
+
+  a.linkActive {
+    color: $color-warning;
+  }
 }
+
+
 
 .icon {
   padding: $base-size;

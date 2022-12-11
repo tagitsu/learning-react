@@ -8,7 +8,6 @@ const Column = props => {
 
   const search = useSelector(state => state.search.value);
   const cards = useSelector(state => filteredCards(state.cards, props.id, search));
-  console.log('column rendered');
   
   return(
     <article className={styles.column}>

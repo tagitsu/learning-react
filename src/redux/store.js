@@ -15,6 +15,11 @@ export const getAllColumns = () => {
   return initialState.columns;
 };
 
+export const getListById = (listId) => {
+  const lists = initialState.lists;
+  return lists.find( list => list.id === listId);
+}
+
 // KREATORY AKCJI
 
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
