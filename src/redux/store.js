@@ -15,10 +15,15 @@ export const getAllColumns = () => {
   return initialState.columns;
 };
 
+export const getColumnsByList = (listId) => {
+  const columns = initialState.columns;
+  return columns.filter( column => listId === column.listId );
+};
+
 export const getListById = (listId) => {
   const lists = initialState.lists;
-  return lists.find( list => list.id === listId);
-}
+  return lists.find( list => list.id === listId );
+};
 
 // KREATORY AKCJI
 

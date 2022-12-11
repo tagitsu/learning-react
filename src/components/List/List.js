@@ -1,12 +1,13 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
-import { getAllColumns, getListById } from '../../redux/store';
+import { getAllColumns, getColumnsByList, getListById } from '../../redux/store';
 import { useSelector } from 'react-redux';
 
 const List = () => {
 
-  const columns = getAllColumns();
+  const columns = useSelector( state => getColumnsByList(state.lists[0].id));
+  console.log('list - columns', columns);
   const listData = useSelector( state => getListById(state.lists[0].id));
   
   return (
