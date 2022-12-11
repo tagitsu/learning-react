@@ -15,13 +15,15 @@ export const getAllColumns = () => {
   return initialState.columns;
 };
 
-export const getColumnsByList = (listId) => {
-  const columns = initialState.columns;
+export const getAllLists = () => {
+  return initialState.lists;
+};
+
+export const getColumnsByList = (columns, listId) => {
   return columns.filter( column => listId === column.listId );
 };
 
-export const getListById = (listId) => {
-  const lists = initialState.lists;
+export const getListById = (lists, listId) => {
   return lists.find( list => list.id === listId );
 };
 
