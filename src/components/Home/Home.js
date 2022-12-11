@@ -9,7 +9,6 @@ const Home = () => {
   return(
     <div>
       <Hero />
-      <SearchForm />
       <Lists />
     </div>
   )
