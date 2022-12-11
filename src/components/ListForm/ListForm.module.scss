@@ -1,0 +1,11 @@
+@import '../../styles/settings.scss';
+
+.form {
+  display: flex;
+  justify-content: center;
+  padding: $base-size;
+
+  &__label {
+    margin: 10px;
+  }
+}
