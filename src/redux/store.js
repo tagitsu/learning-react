@@ -11,6 +11,10 @@ export const filteredCards = (cards, columnId, search) => {
   }
 };
 
+export const favoriteCards = (cards) => {
+  return cards.filter(card => card.isFavorite === true);
+}
+
 export const getAllColumns = () => {
   return initialState.columns;
 };
