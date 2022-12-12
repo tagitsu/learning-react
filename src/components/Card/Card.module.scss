@@ -10,4 +10,18 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+
+    &__button {
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.btn {
+    cursor: pointer;
+}
+
+
+.liked {
+    color: $color-warning;  
 }

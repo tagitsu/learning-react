@@ -9,7 +9,9 @@ import { useParams, Navigate } from 'react-router-dom';
 
 const List = () => {
 
-  const { listId } = useParams();
+  const { listId }  = useParams();
+  console.log('list - listId useParams', listId);
+
 
   const columns = useSelector( state => getColumnsByList(state.columns, listId));
   const listData = useSelector( state => getListById(state.lists, listId));

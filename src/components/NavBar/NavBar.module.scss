@@ -3,6 +3,8 @@
 .nav {
   width: 100%;
   min-height: calc($base-size * 3);
+  background-color: darken($color-dark, 3%);
+  
 
   &__bar {
     display: flex;
@@ -21,6 +23,7 @@
     color: $color-light;
     font-weight: 700;
     padding: $base-size;
+    transition: $transition;
   }
 
   &__menu a:hover {
@@ -36,4 +39,5 @@
 
 .icon {
   padding: $base-size;
+  font-size: ($base-size * 2);
 }

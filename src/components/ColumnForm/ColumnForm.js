@@ -11,7 +11,7 @@ const ColumnForm = props => {
   const [title, setTitle] = useState(''); 
   const [icon, setIcon] = useState('');
 
-  const id = useSelector(state => state.columns.length + 1);
+  const id = useSelector(state => String(state.columns.length + 1));
   const listId = props.listId;
   const handleSubmit = e => {
     e.preventDefault();

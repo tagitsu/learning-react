@@ -27,6 +27,10 @@ export const getListById = (lists, listId) => {
   return lists.find( list => list.id === listId );
 };
 
+export const getCard = (cards, cardId) => {
+  return cards.find( card => card.id === cardId );
+};
+
 // KREATORY AKCJI
 
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
@@ -36,6 +40,9 @@ export const addCard = payload => ({ type: 'ADD_CARD', payload });
 export const searchCard = payload => ({ type: 'SEARCH_CARD', payload });
 
 export const addList = payload => ({ type: 'ADD_LIST', payload });
+
+export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload });
+
 
 // MAGAZYN
 const reducer = (state, action) => {
@@ -51,6 +58,9 @@ const reducer = (state, action) => {
       break;
     case 'ADD_LIST':
       return { ...state, lists: [...state.lists, action.payload]}; // eslint-disable-next-line
+      break;
+    case 'TOGGLE_CARD_FAVORITE':
+      return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };
       break;
     default:
       return state;

@@ -8,13 +8,14 @@ import { addCard } from '../../redux/store';
 const CardForm = props => {
   const dispatch = useDispatch();
 
-  const id = useSelector(state => state.cards.length + 1);
+  const id = useSelector(state => String(state.cards.length + 1));
   const [title, setTitle] = useState(''); 
+  const isFavorite = false;
 
   const handleSubmit = e => {
     e.preventDefault();
-    const columnId = props.columnId;
-    dispatch(addCard({ id, columnId, title }));
+    const columnId = String(props.columnId);
+    dispatch(addCard({ id, columnId, title, isFavorite }));
     setTitle(''); 
   };
 
