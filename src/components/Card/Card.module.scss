@@ -11,6 +11,11 @@
     justify-content: space-between;
     font-weight: bold;
 
+    &__buttons {
+        display: flex;
+        justify-content: end;
+    }
+
     &__button {
         background-color: transparent;
         border: none;
@@ -21,6 +26,9 @@
     cursor: pointer;
 }
 
+.delete:active {
+    color: $color-warning;
+}
 
 .liked {
     color: $color-warning;  
