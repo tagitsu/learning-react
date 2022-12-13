@@ -49,26 +49,52 @@ export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', pa
 
 
 // MAGAZYN
-const reducer = (state, action) => {
-  switch(action.type) {
+const columnsReducer = (statePart = [], action) => {
+  switch (action.type) {
     case 'ADD_COLUMN':
-      return { ...state, columns: [...state.columns, action.payload]}; // eslint-disable-next-line
-      break;
-    case 'ADD_CARD':
-      return { ...state, cards: [...state.cards, action.payload]}; // eslint-disable-next-line
-      break;
-    case 'SEARCH_CARD':
-      return {...state, search: action.payload}; // eslint-disable-next-line
-      break;
-    case 'ADD_LIST':
-      return { ...state, lists: [...state.lists, action.payload]}; // eslint-disable-next-line
-      break;
-    case 'TOGGLE_CARD_FAVORITE':
-      return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };
-      break;
-    default:
-      return state;
+      return [ ...statePart, { ...action.payload}];
+    default: 
+      return statePart;  
   }
+};
+
+const cardsReducer = (statePart = [], action) => {
+  switch (action.type) {
+    case 'ADD_CARD':
+      return [ ...statePart, { ...action.payload }];
+    case 'TOGGLE_CARD_FAVORITE':
+      return statePart.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card);
+    default: 
+      return statePart;  
+  }
+};
+
+const listsReducer = (statePart = [], action) => {
+  switch(action.type) {
+    case 'ADD_LIST':
+      return [...statePart, { ...action.payload }];
+    default: 
+      return statePart;    
+  }
+};
+
+const searchReducer = (statePart = '', action) => {
+  switch(action.type) {
+    case 'SEARCH_CARD':
+      return action.payload;
+    default:
+      return statePart;
+  }
+};
+
+const reducer = (state, action) => {
+  const newState = {
+    lists: listsReducer(state.lists, action),
+    columns: columnsReducer(state.columns, action),
+    cards: cardsReducer(state.cards, action),
+    search: searchReducer(state.search, action)
+  };
+  return newState;
 };
 
 const store = createStore(
